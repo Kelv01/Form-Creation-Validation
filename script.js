@@ -4,16 +4,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const feedbackDiv = document.getElementById("form-feedback");
 
     form.addEventListener("submit", function (event) {
-        event.defaultPrevented();
+        event.preventDefault();
         const usernameInput = document.getElementById("username").value.trim();
         const userEmail = document.getElementById("email").value.trim();
-        const userPassword = document.getElementById("password").value.trim();
+        const password = document.getElementById("password").value.trim();
 
         let isValid = true;
         
         const messages = [];
 
-        if (username.length < 3) {
+        if (usernameInput.length < 3) {
             isValid = false;
             messages.push("username must be at least 3 characters");
 
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 isValid = false;
                 messages.push("enter a valid email address");
             }
-        if (userPassword.length < 8) {
+        if (password.length < 8) {
             isValid = false;
             messages.push("password must  be at least 8 characters");
         }
