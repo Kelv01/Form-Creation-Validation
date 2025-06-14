@@ -5,20 +5,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     form.addEventListener("submit", function (event) {
         event.preventDefault();
-        const usernameInput = document.getElementById("username").value.trim();
-        const userEmail = document.getElementById("email").value.trim();
+        const username = document.getElementById("username").value.trim();
+        const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value.trim();
 
         let isValid = true;
         
         const messages = [];
 
-        if (usernameInput.length < 3) {
+        if (username.length < 3) {
             isValid = false;
             messages.push("username must be at least 3 characters");
 
         }
-        if (!userEmail.includes("@") || userEmail.includes(".")) {
+        if (!email.includes("@") || userEmail.includes(".")) {
                 isValid = false;
                 messages.push("enter a valid email address");
             }
