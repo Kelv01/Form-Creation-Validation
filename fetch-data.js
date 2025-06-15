@@ -23,7 +23,7 @@ async function fetchUserData(callback) {
         dataContainer.appendChild(userList);
         
     } catch (error) {
-        dataContainer.textContent = "failed to load user data";
+        dataContainer.textContent = "Failed to load user data";
         console.error("fetch error:", error);
     }
     
